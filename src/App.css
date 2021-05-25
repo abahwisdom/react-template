@@ -1,38 +1,55 @@
-.App {
-  text-align: center;
+.pad{
+  width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    object-position: bottom;
+    /* filter: sepia(16); */
+    position: fixed;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.pad-contain{
+  height: 100vh;
+  width: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.pes-title{
+  color: #05ecec;
+  z-index: 200;
+  position: fixed;
+  font-size: clamp(21px, 4vw, 48px);
+  right: 6%;
+  top: 8%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.soon{
+  /* font-family: 'Balsamiq Sans'; */
+  font-size:20px;
+  font-size: clamp(18px, 2vw, 30px);
+  color: #e870db;
 }
 
-.App-link {
-  color: #61dafb;
+.soon:after {
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: bottom;
+  -webkit-animation: ellipsis steps(4,end) 1900ms infinite;      
+  animation: ellipsis steps(4,end) 1900ms infinite;
+  content: "\2026"; /* ascii code for the ellipsis character */
+  width: 0px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
+@keyframes ellipsis {
   to {
-    transform: rotate(360deg);
+    width: 1.25em;    
   }
+}
+
+@-webkit-keyframes ellipsis {
+  to {
+    width: 1.25em;    
+  }
+}
+
+body{
+  font-family: 'Reggae One';
 }
